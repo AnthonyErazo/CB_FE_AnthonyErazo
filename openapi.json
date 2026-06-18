@@ -41,11 +41,11 @@
                                                                            "201":  {
                                                                                        "description":  "Created",
                                                                                        "content":  {
-                                                                                                       "*/*":  {
-                                                                                                                   "schema":  {
-                                                                                                                                  "$ref":  "#/components/schemas/TransactionResponse"
-                                                                                                                              }
-                                                                                                               }
+                                                                                                       "application/json":  {
+                                                                                                                                "schema":  {
+                                                                                                                                               "$ref":  "#/components/schemas/TransactionResponse"
+                                                                                                                                           }
+                                                                                                                            }
                                                                                                    }
                                                                                    }
                                                                        }
@@ -72,11 +72,11 @@
                                                                            "200":  {
                                                                                        "description":  "OK",
                                                                                        "content":  {
-                                                                                                       "*/*":  {
-                                                                                                                   "schema":  {
-                                                                                                                                  "$ref":  "#/components/schemas/AccountResponse"
-                                                                                                                              }
-                                                                                                               }
+                                                                                                       "application/json":  {
+                                                                                                                                "schema":  {
+                                                                                                                                               "$ref":  "#/components/schemas/AccountResponse"
+                                                                                                                                           }
+                                                                                                                            }
                                                                                                    }
                                                                                    }
                                                                        }
