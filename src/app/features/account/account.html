@@ -1,0 +1,48 @@
+<section class="account">
+  <form class="row" (ngSubmit)="consultAccount()">
+    <input
+      name="accountId"
+      type="number"
+      min="1"
+      placeholder="ID de cuenta (ej. 1)"
+      [(ngModel)]="accountId"
+    />
+    <button type="submit">Consultar</button>
+  </form>
+
+  @if (loading()) {
+    <p class="muted">Cargando…</p>
+  }
+
+  @if (error()) {
+    <p class="error">{{ error() }}</p>
+  }
+
+  @if (account(); as acc) {
+    <div class="card">
+      <span class="label">Cuenta</span>
+      <strong class="number">{{ acc.accountNumber }}</strong>
+      <span class="balance">Saldo: S/ {{ (acc.balance ?? 0).toFixed(2) }}</span>
+    </div>
+
+    @if (notice()) {
+      <p class="notice">{{ notice() }}</p>
+    }
+
+    <form class="movement" (ngSubmit)="registerTransaction()">
+      <select name="type" [(ngModel)]="type">
+        <option [ngValue]="TransactionType.Deposit">Depósito</option>
+        <option [ngValue]="TransactionType.Withdrawal">Retiro</option>
+      </select>
+      <input
+        name="amount"
+        type="number"
+        step="0.01"
+        min="0.01"
+        placeholder="Monto"
+        [(ngModel)]="amount"
+      />
+      <button type="submit">Registrar movimiento</button>
+    </form>
+  }
+</section>

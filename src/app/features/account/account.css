@@ -1,0 +1,68 @@
+.row,
+.movement {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.row input,
+.movement input,
+.movement select {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.row button,
+.movement button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #2d6cdf;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+  margin-bottom: 16px;
+  border: 1px solid #e3e7ee;
+  border-radius: 10px;
+  background: #f7f9fc;
+}
+
+.label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #889;
+}
+
+.number {
+  font-size: 1.25rem;
+  letter-spacing: 0.04em;
+}
+
+.balance {
+  font-size: 1rem;
+  color: #1f6f3d;
+  font-weight: 600;
+}
+
+.error {
+  color: #c0392b;
+}
+
+.notice {
+  color: #1f6f3d;
+}
+
+.muted {
+  color: #888;
+}
