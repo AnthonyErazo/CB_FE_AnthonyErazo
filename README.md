@@ -6,13 +6,20 @@ backend, así los tipos del front no se desfasan de la API.
 
 ## Requisitos
 - Node.js 24.x
-- El **backend debe estar corriendo** en `http://localhost:8080` (ver `../backend`).
+- El **backend debe estar corriendo** en `http://localhost:8080` por defecto (ver `../backend`).
 - Java 17 (lo usa OpenAPI Generator solo al regenerar el cliente).
 
 ## Ejecutar
 ```bash
 npm install
 npm start          # ng serve -> http://localhost:4200
+```
+
+Si cambias el puerto del backend, arranca Angular indicando la nueva URL:
+
+```powershell
+$env:BACKEND_URL='http://localhost:9090'
+npm start
 ```
 Escribe el **ID de la cuenta** (ej. `1`), pulsa **Consultar**, y registra un
 depósito o retiro. El saldo se recarga tras cada movimiento.
@@ -29,9 +36,9 @@ curl http://localhost:8080/v3/api-docs > openapi.json
 npm run generate:api   # openapi-generator-cli -> src/app/api
 ```
 
-La URL del backend se inyecta en un solo sitio: el token `BASE_PATH` del cliente
-se provee en [src/app/app.config.ts](src/app/app.config.ts) con el valor de
-[src/app/core/api.config.ts](src/app/core/api.config.ts).
+El cliente usa rutas relativas (`/api/**`) y Angular las reenvia al backend con
+[proxy.conf.js](proxy.conf.js). El destino por defecto es `http://localhost:8080`;
+puedes cambiarlo con la variable `BACKEND_URL`.
 
 ## Build / tests
 ```bash

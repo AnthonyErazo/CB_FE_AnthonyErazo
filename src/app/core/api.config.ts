@@ -1,2 +1,2 @@
-/** Backend base URL (single source of truth). */
-export const API_BASE_URL = 'http://localhost:8080';
+/** Empty base path: Angular dev proxy forwards /api/** to the backend. */
+export const API_BASE_URL = '';
